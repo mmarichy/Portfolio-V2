@@ -17,6 +17,7 @@ const emptyForm = {
 	name: "",
 	email: "",
 	message: "",
+	website: "",
 };
 
 export function ContactForm() {
@@ -110,7 +111,7 @@ export function ContactForm() {
 						<div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-500/30 bg-violet-500/10">
 							<MessageSquare
 								size={22}
-								className="text-violet-400"
+								className="text-text-violet-soft"
 							/>
 						</div>
 						<h3 className="mb-2 font-display text-xl font-bold text-foreground">
@@ -135,7 +136,29 @@ export function ContactForm() {
 				) : (
 					<form
 						onSubmit={handleSubmit}
-						className="space-y-5">
+						className="relative space-y-5">
+						<div
+							className="absolute -left-[9999px] h-px w-px overflow-hidden opacity-0"
+							aria-hidden="true">
+							<label htmlFor="website">
+								Ne pas remplir
+							</label>
+							<input
+								id="website"
+								type="text"
+								name="website"
+								tabIndex={-1}
+								autoComplete="off"
+								value={form.website}
+								onChange={(e) =>
+									setForm({
+										...form,
+										website:
+											e.target.value,
+									})
+								}
+							/>
+						</div>
 						<div>
 							<label
 								htmlFor="name"

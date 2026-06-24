@@ -46,7 +46,7 @@ export function ProjectCard({
 				<div className="mb-1.5 font-mono text-[11px] tracking-wider text-text-violet-muted uppercase">
 					{project.category}
 				</div>
-				<h3 className="mb-2.5 font-display text-lg font-bold text-foreground transition-colors group-hover:text-violet-100">
+				<h3 className="mb-2.5 font-display text-lg font-bold text-foreground transition-colors group-hover:text-text-violet-soft">
 					{project.title}
 				</h3>
 				<p className="mb-4 line-clamp-4 text-sm leading-relaxed text-muted-foreground">

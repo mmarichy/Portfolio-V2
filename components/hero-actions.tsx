@@ -15,7 +15,7 @@ export function HeroActions() {
 		"inline-flex w-full max-w-sm items-center justify-center gap-2 rounded-xl px-8 py-3.5 sm:w-auto sm:max-w-none";
 
 	return (
-		<div className="mb-24 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center">
+		<div className="mb-24 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-start sm:justify-start">
 			<Link
 				href="/projets"
 				className={`${buttonClass} bg-violet-600 font-semibold text-white shadow-[0_0_32px_rgba(124,58,237,0.38)] transition-colors hover:bg-violet-500`}

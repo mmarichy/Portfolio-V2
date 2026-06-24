@@ -2,11 +2,11 @@ import type {
 	Experience,
 	NavLink,
 	StackCategory,
-	Stat,
 	AboutInfo,
 	ContactLink,
 } from "@/lib/types";
 import {
+	SITE_CV_PATH,
 	SITE_EMAIL,
 	SITE_SOCIAL,
 } from "@/lib/site";
@@ -109,13 +109,6 @@ export const NAV_LINKS: NavLink[] = [
 	},
 ];
 
-export const STATS: Stat[] = [
-	{ v: "3+", l: "Ans d'expérience" },
-	{ v: "2", l: "Projets React" },
-	{ v: "1", l: "Démo en ligne" },
-	{ v: "100%", l: "Open-source" },
-];
-
 export const ABOUT_INFO: AboutInfo[] = [
 	{
 		l: "Spécialité",
@@ -150,5 +143,11 @@ export const CONTACT_LINKS: ContactLink[] =
 			label: "Mon LinkedIn",
 			href: SITE_SOCIAL.linkedin,
 			icon: "linkedin",
+		},
+		{
+			label: "Mon CV",
+			href: SITE_CV_PATH,
+			icon: "cv",
+			external: true,
 		},
 	];

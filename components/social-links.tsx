@@ -1,6 +1,7 @@
 "use client";
 
 import {
+	FileText,
 	Github,
 	Linkedin,
 	Mail,
@@ -14,6 +15,7 @@ const ICON_MAP = {
 	mail: Mail,
 	github: Github,
 	linkedin: Linkedin,
+	cv: FileText,
 } as const satisfies Record<
 	ContactIcon,
 	AnimatedIcon
@@ -30,26 +32,29 @@ function SocialLink({
 	href,
 	label,
 	icon,
+	external = false,
 	size,
 	className,
 }: {
 	href: string;
 	label: string;
 	icon: ContactIcon;
+	external?: boolean;
 	size: number;
 	className: string;
 }) {
 	const { groupProps, iconProps } =
 		useGroupHoverIcon();
 	const Icon = ICON_MAP[icon];
-	const external = href.startsWith("http");
+	const opensInNewTab =
+		external || href.startsWith("http");
 
 	return (
 		<a
 			href={href}
 			className={className}
 			aria-label={label}
-			{...(external
+			{...(opensInNewTab
 				? {
 						target: "_blank",
 						rel: "noopener noreferrer",

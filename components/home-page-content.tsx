@@ -16,22 +16,9 @@ export function HomePageContent() {
 				className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden"
 				aria-label="Présentation">
 				<div
-					className="pointer-events-none absolute inset-0"
-					style={{
-						background: [
-							"radial-gradient(ellipse 65% 55% at 68% 28%, rgba(124,58,237,0.08) 0%, transparent 65%)",
-							"radial-gradient(ellipse 45% 35% at 12% 78%, rgba(167,139,250,0.05) 0%, transparent 55%)",
-						].join(", "),
-					}}
+					className="pointer-events-none absolute inset-0 hero-radial-bg"
 				/>
-				<div
-					className="pointer-events-none absolute inset-0 opacity-[0.018]"
-					style={{
-						backgroundImage:
-							"linear-gradient(rgba(139,92,246,1) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,1) 1px, transparent 1px)",
-						backgroundSize: "64px 64px",
-					}}
-				/>
+				<div className="pointer-events-none absolute inset-0 hero-grid-bg" />
 
 				<div className="relative mx-auto w-full max-w-6xl px-6 pt-24 pb-32">
 					<div className="grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">

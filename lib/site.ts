@@ -39,6 +39,9 @@ export const SITE_SOCIAL = {
 		"https://www.linkedin.com/in/mathis-marichy/",
 } as const;
 
+/** Fichier PDF dans public/cv/ — servi en statique, ouvert dans un nouvel onglet */
+export const SITE_CV_PATH = "/cv/mathis_marichy-cv.pdf";
+
 export const SITE_SKILLS = [
 	"Next.js",
 	"React",

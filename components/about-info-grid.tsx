@@ -28,7 +28,7 @@ function AboutInfoCard({
 			<div className="mb-2 flex items-center gap-2">
 				<Icon
 					size={14}
-					className="text-violet-400"
+					className="text-text-violet-soft"
 					{...iconProps}
 				/>
 				<div className="font-mono text-[11px] text-muted-foreground">

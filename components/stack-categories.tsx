@@ -29,7 +29,7 @@ function StackCategoryCard({
 				<div className="flex h-9 w-9 items-center justify-center rounded-xl border border-violet-500/20 bg-violet-500/10 transition-colors group-hover:bg-violet-500/15">
 					<Icon
 						size={16}
-						className="text-violet-400"
+						className="text-text-violet-soft"
 						{...iconProps}
 					/>
 				</div>

@@ -20,7 +20,7 @@ export function ProjectSectionLink({
 		return (
 			<Link
 				href="/projets"
-				className="hidden items-center gap-2 font-mono text-sm text-muted-foreground transition-colors hover:text-violet-400 md:inline-flex"
+				className="hidden items-center gap-2 font-mono text-sm text-muted-foreground transition-colors hover:text-text-violet-soft md:inline-flex"
 				{...groupProps}>
 				Tout voir{" "}
 				<ArrowRight

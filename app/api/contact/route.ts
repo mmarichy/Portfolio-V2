@@ -2,6 +2,10 @@ import {
   buildContactEmailHtml,
   buildContactEmailText,
 } from "@/lib/emails/contact-notification";
+import {
+  getClientIp,
+  isRateLimited,
+} from "@/lib/rate-limit";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -9,6 +13,7 @@ type ContactPayload = {
   name?: string;
   email?: string;
   message?: string;
+  website?: string;
 };
 
 function isValidEmail(email: string): boolean {
@@ -31,6 +36,21 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { error: "Requête invalide." },
       { status: 400 },
+    );
+  }
+
+  if (body.website?.trim()) {
+    return NextResponse.json({ success: true });
+  }
+
+  const clientIp = getClientIp(request);
+  if (isRateLimited(`contact:${clientIp}`)) {
+    return NextResponse.json(
+      {
+        error:
+          "Trop de messages envoyés. Réessayez dans quelques minutes.",
+      },
+      { status: 429 },
     );
   }
 

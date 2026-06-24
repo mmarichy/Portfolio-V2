@@ -157,7 +157,6 @@ export const rootMetadata: Metadata = {
 				type: "image/png",
 			},
 		],
-		apple: "/favicon/apple-touch-icon.png",
 	},
 	other: {
 		"job-title": SITE_JOB_TITLE,

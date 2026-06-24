@@ -35,11 +35,6 @@ export type NavLink = {
 	label: string;
 };
 
-export type Stat = {
-	v: string;
-	l: string;
-};
-
 export type AboutIconName =
 	| "cpu"
 	| "briefcase"
@@ -54,10 +49,13 @@ export type AboutInfo = {
 export type ContactIcon =
 	| "mail"
 	| "github"
-	| "linkedin";
+	| "linkedin"
+	| "cv";
 
 export type ContactLink = {
 	label: string;
 	href: string;
 	icon: ContactIcon;
+	/** Ouvre le lien dans un nouvel onglet */
+	external?: boolean;
 };

@@ -9,6 +9,7 @@ import {
 	useGroupHoverIcon,
 } from "@/components/animated-icons";
 import { NAV_LINKS } from "@/lib/data";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
 	const pathname = usePathname();
@@ -49,7 +50,7 @@ export function Navbar() {
 								href={href}
 								className={`rounded-lg px-3.5 py-2 text-sm transition-all ${
 									isActive(href)
-										? "bg-violet-500/10 text-violet-400"
+										? "bg-violet-500/10 text-text-violet-soft"
 										: "text-muted-foreground hover:bg-secondary hover:text-foreground"
 								}`}>
 								{label}
@@ -58,43 +59,49 @@ export function Navbar() {
 					)}
 				</nav>
 
-				<Link
-					href="/contact"
-					className="hidden items-center gap-2 rounded-xl bg-violet-600/90 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-violet-500 md:inline-flex"
-					{...contact.groupProps}>
-					<Mail
-						size={14}
-						{...contact.iconProps}
-					/>
-					Contact
-				</Link>
+				<div className="hidden items-center gap-4 md:flex">
+					<ThemeToggle />
+					<Link
+						href="/contact"
+						className="inline-flex items-center gap-2 rounded-xl bg-violet-600/90 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-violet-500"
+						{...contact.groupProps}>
+						<Mail
+							size={14}
+							{...contact.iconProps}
+						/>
+						Contact
+					</Link>
+				</div>
 
-				<button
-					type="button"
-					className="flex h-8 w-8 flex-col items-center justify-center gap-[5px] md:hidden"
-					onClick={() => setOpen(!open)}
-					aria-label="Menu"
-					aria-expanded={open}>
-					<span
-						className={`h-px w-5 origin-center bg-foreground/70 transition-all duration-300 ${
-							open
-								? "translate-y-[3px] rotate-45"
-								: ""
-						}`}
-					/>
-					<span
-						className={`h-px w-5 bg-foreground/70 transition-all ${
-							open ? "opacity-0" : ""
-						}`}
-					/>
-					<span
-						className={`h-px w-5 origin-center bg-foreground/70 transition-all duration-300 ${
-							open
-								? "translate-y-[3px] -rotate-45"
-								: ""
-						}`}
-					/>
-				</button>
+				<div className="flex items-center gap-3 md:hidden">
+					<ThemeToggle />
+					<button
+						type="button"
+						className="flex h-8 w-8 flex-col items-center justify-center gap-[5px]"
+						onClick={() => setOpen(!open)}
+						aria-label="Menu"
+						aria-expanded={open}>
+						<span
+							className={`h-px w-5 origin-center bg-foreground/70 transition-all duration-300 ${
+								open
+									? "translate-y-[3px] rotate-45"
+									: ""
+							}`}
+						/>
+						<span
+							className={`h-px w-5 bg-foreground/70 transition-all ${
+								open ? "opacity-0" : ""
+							}`}
+						/>
+						<span
+							className={`h-px w-5 origin-center bg-foreground/70 transition-all duration-300 ${
+								open
+									? "translate-y-[3px] -rotate-45"
+									: ""
+							}`}
+						/>
+					</button>
+				</div>
 			</div>
 
 			{open && (
@@ -110,7 +117,7 @@ export function Navbar() {
 									}
 									className={`block w-full rounded-xl px-4 py-3 text-left text-sm transition-all ${
 										isActive(href)
-											? "bg-violet-500/10 text-violet-400"
+											? "bg-violet-500/10 text-text-violet-soft"
 											: "text-muted-foreground hover:bg-secondary hover:text-foreground"
 									}`}>
 									{label}

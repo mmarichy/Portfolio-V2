@@ -3,9 +3,7 @@
 import { AvailabilityBadge } from "@/components/availability-badge";
 import { ProfilePhoto } from "@/components/profile-photo";
 import { SocialLinks } from "@/components/social-links";
-import {
-	MapPin,
-} from "@/components/animated-icons";
+import { MapPin } from "@/components/animated-icons";
 
 export function AboutSidebar() {
 	return (
@@ -25,7 +23,7 @@ export function AboutSidebar() {
 			<SocialLinks
 				variant="boxed"
 				size={15}
-				className="mt-5 flex gap-2.5"
+				className="mt-5 flex flex-wrap gap-2.5"
 			/>
 		</div>
 	);

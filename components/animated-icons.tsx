@@ -7,6 +7,7 @@ import {
 	CpuIcon,
 	DatabaseIcon,
 	EarthIcon,
+	FileTextIcon,
 	GithubIcon,
 	LinkIcon,
 	LinkedinIcon,
@@ -85,6 +86,7 @@ export const ABOUT_ICON_MAP = {
 export {
 	ArrowRightIcon as ArrowRight,
 	ChevronRightIcon as ChevronRight,
+	FileTextIcon as FileText,
 	GithubIcon as Github,
 	LinkedinIcon as Linkedin,
 	SendIcon as Mail,

@@ -267,17 +267,19 @@ export function ContextMenu() {
 
 			<div className="context-menu-section">
 				{CONTACT_LINKS.map(
-					({ href, label }) => (
+					({ href, label, external }) => (
 						<a
 							key={href}
 							href={href}
 							role="menuitem"
 							target={
+								external ||
 								href.startsWith("http")
 									? "_blank"
 									: undefined
 							}
 							rel={
+								external ||
 								href.startsWith("http")
 									? "noopener noreferrer"
 									: undefined
