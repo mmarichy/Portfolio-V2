@@ -21,7 +21,8 @@ const emptyForm = {
 };
 
 export function ContactForm() {
-	const [form, setForm] = useState(emptyForm);
+	const [form, setForm] =
+		useState(emptyForm);
 	const [status, setStatus] = useState<
 		| "idle"
 		| "loading"
@@ -90,7 +91,9 @@ export function ContactForm() {
 				<AvailabilityBadge className="mb-8 lg:absolute lg:top-20 lg:right-6 lg:mb-0" />
 			</Reveal>
 
-			<Reveal className="mb-16" delay={0.05}>
+			<Reveal
+				className="mb-16"
+				delay={0.05}>
 				<SectionLabel>
 					Contact
 				</SectionLabel>
@@ -118,8 +121,8 @@ export function ContactForm() {
 							Message envoyé !
 						</h3>
 						<p className="mb-6 text-muted-foreground">
-							Je vous répondrai dans
-							les plus brefs délais.
+							Je vous répondrai dans les
+							plus brefs délais.
 						</p>
 						<button
 							type="button"
@@ -138,7 +141,7 @@ export function ContactForm() {
 						onSubmit={handleSubmit}
 						className="relative space-y-5">
 						<div
-							className="absolute -left-[9999px] h-px w-px overflow-hidden opacity-0"
+							className="absolute left-[9999px] h-px w-px overflow-hidden opacity-0"
 							aria-hidden="true">
 							<label htmlFor="website">
 								Ne pas remplir

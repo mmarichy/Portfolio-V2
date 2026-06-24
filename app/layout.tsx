@@ -1,5 +1,6 @@
 import type { Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
 	Inter,
 	JetBrains_Mono,
@@ -78,6 +79,7 @@ export default function RootLayout({
 				</main>
 				<Footer />
 				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	);
